@@ -190,7 +190,6 @@ namespace campusCareAPI.Controllers
             var citasMedica = new CitasMedica
             {
                 Fecha = citasMedicasDTO.Fecha,
-
                 TipoConsulta = tipoConsulta.IdtiposConsultas,
                 Paciente = usuario.IdPacientes,
                 Doctor = doctor.IdDoctores

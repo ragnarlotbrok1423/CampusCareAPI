@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using clinic_api.Models;
 using clinic_api.DTO_s;
+using campusCareAPI.DTO_s;
 
 namespace clinic_api.Controllers
 {
@@ -23,10 +24,55 @@ namespace clinic_api.Controllers
 
         // GET: api/Doctores
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Doctore>>> GetDoctores()
+        public async Task<ActionResult<IEnumerable<DoctoresDTO>>> GetDoctores()
         {
-            return await _context.Doctores.ToListAsync();
+            var doctores = await _context.Doctores
+                  .Include(d => d.EspecialidadFkNavigation)
+                  .Include(d => d.InformacionMedicaNavigation)
+                  .Select(p => new DoctoresDTO
+                  {
+                      IdDoctores = p.IdDoctores,
+                      NombreCompleto = p.NombreCompleto,
+                      Cedula = p.Cedula,
+                      Especialidad = new EspecialidadesDTO
+                      {
+                          Especialidad = p.EspecialidadFkNavigation.Especialidad
+                      }
+
+                  })
+                  .ToListAsync();
+            return Ok(doctores);
         }
+
+        [HttpGet("especialidad/{id}")]
+        public async Task<ActionResult<IEnumerable<DoctoresDTO>>> GetDoctoresByEspecialidad(int id)
+        {
+            var doctores = await _context.Doctores
+                  .Include(d => d.EspecialidadFkNavigation)
+                  .Include(d => d.InformacionMedicaNavigation)
+                  .Where(d => d.EspecialidadFk == id)
+                  .Select(p => new DoctoresDTO
+                  {
+                      IdDoctores = p.IdDoctores,
+                      NombreCompleto = p.NombreCompleto,
+                      Cedula = p.Cedula,
+                      Especialidad = new EspecialidadesDTO
+                      {
+                          Especialidad = p.EspecialidadFkNavigation.Especialidad
+                      }
+
+                  })
+
+                  .ToListAsync();
+            if (doctores == null || !doctores.Any())
+            {
+                return NotFound(new { message = "No hay doctores para esta especialidad" });
+            }
+            return Ok(doctores);
+        }
+
+
+
 
         // GET: api/Doctores/5
         [HttpGet("{id}")]

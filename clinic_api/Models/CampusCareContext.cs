@@ -16,23 +16,33 @@ public partial class CampusCareContext : DbContext
     {
     }
 
+    public virtual DbSet<Categoria> Categorias { get; set; }
+
+    public virtual DbSet<Certificado> Certificados { get; set; }
+
     public virtual DbSet<CitasMedica> CitasMedicas { get; set; }
 
     public virtual DbSet<Doctore> Doctores { get; set; }
 
+    public virtual DbSet<DonantesSangre> DonantesSangres { get; set; }
+
     public virtual DbSet<Especialidade> Especialidades { get; set; }
+
+    public virtual DbSet<Estado> Estados { get; set; }
 
     public virtual DbSet<HistoriaClinica> HistoriaClinicas { get; set; }
 
     public virtual DbSet<InformacionesMedica> InformacionesMedicas { get; set; }
 
-    public virtual DbSet<Inventario> Inventarios { get; set; }
-
     public virtual DbSet<Medicamento> Medicamentos { get; set; }
 
     public virtual DbSet<Paciente> Pacientes { get; set; }
 
-    public virtual DbSet<RegistroDeEntrega> RegistroDeEntregas { get; set; }
+    public virtual DbSet<Pedido> Pedidos { get; set; }
+
+    public virtual DbSet<Receta> Recetas { get; set; }
+
+    public virtual DbSet<Referencia> Referencias { get; set; }
 
     public virtual DbSet<TipajesSanguineo> TipajesSanguineos { get; set; }
 
@@ -50,6 +60,50 @@ public partial class CampusCareContext : DbContext
             .UseCollation("utf8mb4_0900_ai_ci")
             .HasCharSet("utf8mb4");
 
+        modelBuilder.Entity<Categoria>(entity =>
+        {
+            entity.HasKey(e => e.IdCategoria).HasName("PRIMARY");
+
+            entity.ToTable("categorias");
+
+            entity.Property(e => e.IdCategoria).HasColumnName("idCategoria");
+            entity.Property(e => e.NombreCategoria)
+                .HasMaxLength(45)
+                .HasColumnName("nombreCategoria");
+        });
+
+        modelBuilder.Entity<Certificado>(entity =>
+        {
+            entity.HasKey(e => e.Idcertificados).HasName("PRIMARY");
+
+            entity.ToTable("certificados");
+
+            entity.HasIndex(e => e.DoctorFk, "doctor_certificado_idx");
+
+            entity.HasIndex(e => e.PacienteFk, "paciente_certificado_idx");
+
+            entity.Property(e => e.Idcertificados).HasColumnName("idcertificados");
+            entity.Property(e => e.DoctorFk).HasColumnName("doctor_fk");
+            entity.Property(e => e.Fecha)
+                .HasMaxLength(19)
+                .HasColumnName("fecha");
+            entity.Property(e => e.Motivo)
+                .HasMaxLength(45)
+                .HasColumnName("motivo");
+            entity.Property(e => e.PacienteFk).HasColumnName("paciente_fk");
+            entity.Property(e => e.Pdf).HasColumnName("pdf");
+
+            entity.HasOne(d => d.DoctorFkNavigation).WithMany(p => p.Certificados)
+                .HasForeignKey(d => d.DoctorFk)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("doctor_certificado");
+
+            entity.HasOne(d => d.PacienteFkNavigation).WithMany(p => p.Certificados)
+                .HasForeignKey(d => d.PacienteFk)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("paciente_certificado");
+        });
+
         modelBuilder.Entity<CitasMedica>(entity =>
         {
             entity.HasKey(e => e.IdcitasMedicas).HasName("PRIMARY");
@@ -58,14 +112,17 @@ public partial class CampusCareContext : DbContext
 
             entity.HasIndex(e => e.Doctor, "doctor_fk_idx");
 
+            entity.HasIndex(e => e.Estado, "estado_fk_idx");
+
             entity.HasIndex(e => e.TipoConsulta, "tipos_consultas_idx");
 
             entity.HasIndex(e => e.Paciente, "usuarios_fk_idx");
 
             entity.Property(e => e.IdcitasMedicas).HasColumnName("idcitas_medicas");
             entity.Property(e => e.Doctor).HasColumnName("doctor");
+            entity.Property(e => e.Estado).HasColumnName("estado");
             entity.Property(e => e.Fecha)
-                .HasMaxLength(18)
+                .HasMaxLength(19)
                 .HasColumnName("fecha");
             entity.Property(e => e.Paciente).HasColumnName("paciente");
             entity.Property(e => e.TipoConsulta).HasColumnName("tipoConsulta");
@@ -75,6 +132,11 @@ public partial class CampusCareContext : DbContext
                 .HasForeignKey(d => d.Doctor)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("doctor_fk");
+
+            entity.HasOne(d => d.EstadoNavigation).WithMany(p => p.CitasMedicas)
+                .HasForeignKey(d => d.Estado)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("estado_fk");
 
             entity.HasOne(d => d.PacienteNavigation).WithMany(p => p.CitasMedicas)
                 .HasForeignKey(d => d.Paciente)
@@ -123,6 +185,34 @@ public partial class CampusCareContext : DbContext
                 .HasConstraintName("infoMedica_fk_doctores");
         });
 
+        modelBuilder.Entity<DonantesSangre>(entity =>
+        {
+            entity.HasKey(e => e.IddonantesSangre).HasName("PRIMARY");
+
+            entity.ToTable("donantes_sangre");
+
+            entity.HasIndex(e => e.PacienteFk, "donante_fk_idx");
+
+            entity.HasIndex(e => e.DoctorFk, "enfermera_fk_idx");
+
+            entity.Property(e => e.IddonantesSangre).HasColumnName("iddonantes_sangre");
+            entity.Property(e => e.DoctorFk).HasColumnName("doctor_fk");
+            entity.Property(e => e.Fecha)
+                .HasMaxLength(19)
+                .HasColumnName("fecha");
+            entity.Property(e => e.PacienteFk).HasColumnName("paciente_fk");
+
+            entity.HasOne(d => d.DoctorFkNavigation).WithMany(p => p.DonantesSangres)
+                .HasForeignKey(d => d.DoctorFk)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("doctor_dn_fk");
+
+            entity.HasOne(d => d.PacienteFkNavigation).WithMany(p => p.DonantesSangres)
+                .HasForeignKey(d => d.PacienteFk)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("donante");
+        });
+
         modelBuilder.Entity<Especialidade>(entity =>
         {
             entity.HasKey(e => e.IdEspecialidades).HasName("PRIMARY");
@@ -133,6 +223,18 @@ public partial class CampusCareContext : DbContext
             entity.Property(e => e.Especialidad)
                 .HasMaxLength(45)
                 .HasColumnName("especialidad");
+        });
+
+        modelBuilder.Entity<Estado>(entity =>
+        {
+            entity.HasKey(e => e.Idestados).HasName("PRIMARY");
+
+            entity.ToTable("estados");
+
+            entity.Property(e => e.Idestados).HasColumnName("idestados");
+            entity.Property(e => e.NombreEstado)
+                .HasMaxLength(30)
+                .HasColumnName("nombre_estado");
         });
 
         modelBuilder.Entity<HistoriaClinica>(entity =>
@@ -171,33 +273,25 @@ public partial class CampusCareContext : DbContext
                 .HasConstraintName("tipaje_fk");
         });
 
-        modelBuilder.Entity<Inventario>(entity =>
-        {
-            entity.HasKey(e => e.IdInventario).HasName("PRIMARY");
-
-            entity.ToTable("inventario");
-
-            entity.HasIndex(e => e.Medicamentofk, "fk_medicamento_idx");
-
-            entity.Property(e => e.IdInventario).HasColumnName("idInventario");
-            entity.Property(e => e.CantidadDisponible).HasColumnName("cantidad_disponible");
-            entity.Property(e => e.Medicamentofk).HasColumnName("medicamentofk");
-
-            entity.HasOne(d => d.MedicamentofkNavigation).WithMany(p => p.Inventarios)
-                .HasForeignKey(d => d.Medicamentofk)
-                .HasConstraintName("fk_medicamento");
-        });
-
         modelBuilder.Entity<Medicamento>(entity =>
         {
             entity.HasKey(e => e.Idmedicamento).HasName("PRIMARY");
 
-            entity.ToTable("medicamento");
+            entity.ToTable("medicamentos");
+
+            entity.HasIndex(e => e.CategoriaFk, "fk_categoria_idx");
 
             entity.Property(e => e.Idmedicamento).HasColumnName("idmedicamento");
+            entity.Property(e => e.CantidadStock).HasColumnName("cantidadStock");
+            entity.Property(e => e.CategoriaFk).HasColumnName("categoria_fk");
             entity.Property(e => e.Nombre)
                 .HasMaxLength(45)
                 .HasColumnName("nombre");
+
+            entity.HasOne(d => d.CategoriaFkNavigation).WithMany(p => p.Medicamentos)
+                .HasForeignKey(d => d.CategoriaFk)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("fk_categoria");
         });
 
         modelBuilder.Entity<Paciente>(entity =>
@@ -233,15 +327,44 @@ public partial class CampusCareContext : DbContext
                 .HasConstraintName("informacion_medica_fk_pacientes");
         });
 
-        modelBuilder.Entity<RegistroDeEntrega>(entity =>
+        modelBuilder.Entity<Pedido>(entity =>
+        {
+            entity.HasKey(e => e.Idpedidos).HasName("PRIMARY");
+
+            entity.ToTable("pedidos");
+
+            entity.HasIndex(e => e.FarmaceuticoFk, "fk_farmaceutico_idx");
+
+            entity.HasIndex(e => e.MedicamentoFk, "medicamento_pedido_fk_idx");
+
+            entity.Property(e => e.Idpedidos).HasColumnName("idpedidos");
+            entity.Property(e => e.Cantidad).HasColumnName("cantidad");
+            entity.Property(e => e.FarmaceuticoFk).HasColumnName("farmaceutico_fk");
+            entity.Property(e => e.Fecha)
+                .HasMaxLength(19)
+                .HasColumnName("fecha");
+            entity.Property(e => e.MedicamentoFk).HasColumnName("medicamento_fk");
+
+            entity.HasOne(d => d.FarmaceuticoFkNavigation).WithMany(p => p.Pedidos)
+                .HasForeignKey(d => d.FarmaceuticoFk)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("farmaceutico_pedido");
+
+            entity.HasOne(d => d.MedicamentoFkNavigation).WithMany(p => p.Pedidos)
+                .HasForeignKey(d => d.MedicamentoFk)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("medicamento_pedido_fk");
+        });
+
+        modelBuilder.Entity<Receta>(entity =>
         {
             entity.HasKey(e => e.IdRegistroDeEntrega).HasName("PRIMARY");
 
-            entity.ToTable("registro_de_entrega");
+            entity.ToTable("recetas");
 
             entity.HasIndex(e => e.FarmaceuticoFkk, "farmaceuticofkk_idx");
 
-            entity.HasIndex(e => e.MedicamentoFkk, "medicamento_fk_idx");
+            entity.HasIndex(e => e.MedicamentoFk, "fk_medicamentos_idx");
 
             entity.HasIndex(e => e.PacienteFkk, "paciente_fkk_idx");
 
@@ -251,23 +374,67 @@ public partial class CampusCareContext : DbContext
             entity.Property(e => e.FechaDeEntrega)
                 .HasMaxLength(45)
                 .HasColumnName("fecha_de_entrega");
-            entity.Property(e => e.MedicamentoFkk).HasColumnName("medicamento_fkk");
+            entity.Property(e => e.MedicamentoFk).HasColumnName("medicamento_fk");
             entity.Property(e => e.Observaciones)
                 .HasMaxLength(45)
                 .HasColumnName("observaciones");
             entity.Property(e => e.PacienteFkk).HasColumnName("paciente_fkk");
 
-            entity.HasOne(d => d.FarmaceuticoFkkNavigation).WithMany(p => p.RegistroDeEntregas)
+            entity.HasOne(d => d.FarmaceuticoFkkNavigation).WithMany(p => p.Receta)
                 .HasForeignKey(d => d.FarmaceuticoFkk)
+                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("farmaceuticofkk");
 
-            entity.HasOne(d => d.MedicamentoFkkNavigation).WithMany(p => p.RegistroDeEntregas)
-                .HasForeignKey(d => d.MedicamentoFkk)
-                .HasConstraintName("medicamento_fk");
+            entity.HasOne(d => d.MedicamentoFkNavigation).WithMany(p => p.Receta)
+                .HasForeignKey(d => d.MedicamentoFk)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("fk_medicamentos");
 
-            entity.HasOne(d => d.PacienteFkkNavigation).WithMany(p => p.RegistroDeEntregas)
+            entity.HasOne(d => d.PacienteFkkNavigation).WithMany(p => p.Receta)
                 .HasForeignKey(d => d.PacienteFkk)
+                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("paciente_fkk");
+        });
+
+        modelBuilder.Entity<Referencia>(entity =>
+        {
+            entity.HasKey(e => e.Idreferencias).HasName("PRIMARY");
+
+            entity.ToTable("referencias");
+
+            entity.HasIndex(e => e.DoctorFk, "doctor_referencia_idx");
+
+            entity.HasIndex(e => e.PacienteFk, "paciente_referencia_idx");
+
+            entity.Property(e => e.Idreferencias).HasColumnName("idreferencias");
+            entity.Property(e => e.CondicionMedica)
+                .HasMaxLength(45)
+                .HasColumnName("condicion_medica");
+            entity.Property(e => e.Diagnostico)
+                .HasMaxLength(45)
+                .HasColumnName("diagnostico");
+            entity.Property(e => e.DoctorFk).HasColumnName("doctor_fk");
+            entity.Property(e => e.Especialidad)
+                .HasMaxLength(45)
+                .HasColumnName("especialidad");
+            entity.Property(e => e.Fecha)
+                .HasMaxLength(19)
+                .HasColumnName("fecha");
+            entity.Property(e => e.PacienteFk).HasColumnName("paciente_fk");
+            entity.Property(e => e.Pdf).HasColumnName("pdf");
+            entity.Property(e => e.Sintomas)
+                .HasMaxLength(45)
+                .HasColumnName("sintomas");
+
+            entity.HasOne(d => d.DoctorFkNavigation).WithMany(p => p.Referencia)
+                .HasForeignKey(d => d.DoctorFk)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("doctor_referencia");
+
+            entity.HasOne(d => d.PacienteFkNavigation).WithMany(p => p.Referencia)
+                .HasForeignKey(d => d.PacienteFk)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("paciente_referencia");
         });
 
         modelBuilder.Entity<TipajesSanguineo>(entity =>

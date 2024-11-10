@@ -17,7 +17,11 @@ public partial class CitasMedica
 
     public sbyte Visible { get; set; }
 
+    public int Estado { get; set; }
+
     public virtual Doctore DoctorNavigation { get; set; } = null!;
+
+    public virtual Estado EstadoNavigation { get; set; } = null!;
 
     public virtual Paciente PacienteNavigation { get; set; } = null!;
 

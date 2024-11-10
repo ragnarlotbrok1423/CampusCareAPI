@@ -17,35 +17,35 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = clinic_api
 build_property.RootNamespace = clinic_api
-build_property.ProjectDir = C:\Users\erick\Downloads\clinic_api\clinic_api\
+build_property.ProjectDir = C:\Users\erick\Downloads\campusCare_api_Repository\CampusCareAPI\clinic_api\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\erick\Downloads\clinic_api\clinic_api
+build_property.MSBuildProjectDirectory = C:\Users\erick\Downloads\campusCare_api_Repository\CampusCareAPI\clinic_api
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/erick/Downloads/clinic_api/clinic_api/Views/Doctores/Create.cshtml]
+[C:/Users/erick/Downloads/campusCare_api_Repository/CampusCareAPI/clinic_api/Views/Doctores/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/erick/Downloads/clinic_api/clinic_api/Views/Doctores/Delete.cshtml]
+[C:/Users/erick/Downloads/campusCare_api_Repository/CampusCareAPI/clinic_api/Views/Doctores/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yZXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/erick/Downloads/clinic_api/clinic_api/Views/Doctores/Details.cshtml]
+[C:/Users/erick/Downloads/campusCare_api_Repository/CampusCareAPI/clinic_api/Views/Doctores/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yZXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/erick/Downloads/clinic_api/clinic_api/Views/Doctores/Edit.cshtml]
+[C:/Users/erick/Downloads/campusCare_api_Repository/CampusCareAPI/clinic_api/Views/Doctores/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/erick/Downloads/clinic_api/clinic_api/Views/Doctores/Index.cshtml]
+[C:/Users/erick/Downloads/campusCare_api_Repository/CampusCareAPI/clinic_api/Views/Doctores/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/erick/Downloads/clinic_api/clinic_api/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/erick/Downloads/campusCare_api_Repository/CampusCareAPI/clinic_api/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
