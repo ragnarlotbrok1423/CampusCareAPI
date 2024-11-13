@@ -43,6 +43,7 @@ namespace clinic_api.Controllers
                   .ToListAsync();
             return Ok(doctores);
         }
+        // este controlador es para obtener los doctores con una especialidad en especifico
 
         [HttpGet("especialidad/{id}")]
         public async Task<ActionResult<IEnumerable<DoctoresDTO>>> GetDoctoresByEspecialidad(int id)

@@ -87,6 +87,13 @@ namespace campusCareAPI.Controllers
 
         }
 
+
+
+
+
+
+
+
         // GET: api/Usuarios/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Paciente>> GetUsuario(int id)

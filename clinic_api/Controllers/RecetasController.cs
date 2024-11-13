@@ -71,6 +71,11 @@ namespace clinic_api.Controllers
             return Ok(recetas);
         }
 
+
+
+
+
+
         // GET: api/Recetas/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Receta>> GetReceta(int id)

@@ -3,40 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\erick\\Downloads\\campusCare_api_Repository\\CampusCareAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{860C73C7-0906-46D3-8F8F-DC47723AAF9C}|clinic_api\\clinic_api.csproj|c:\\users\\erick\\downloads\\campuscare_api_repository\\campuscareapi\\clinic_api\\models\\campuscarecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{860C73C7-0906-46D3-8F8F-DC47723AAF9C}|clinic_api\\clinic_api.csproj|solutionrelative:clinic_api\\models\\campuscarecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{860C73C7-0906-46D3-8F8F-DC47723AAF9C}|clinic_api\\clinic_api.csproj|c:\\users\\erick\\downloads\\campuscare_api_repository\\campuscareapi\\clinic_api\\controllers\\categoriascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{860C73C7-0906-46D3-8F8F-DC47723AAF9C}|clinic_api\\clinic_api.csproj|solutionrelative:clinic_api\\controllers\\categoriascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{860C73C7-0906-46D3-8F8F-DC47723AAF9C}|clinic_api\\clinic_api.csproj|c:\\users\\erick\\downloads\\campuscare_api_repository\\campuscareapi\\clinic_api\\controllers\\pedidoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{860C73C7-0906-46D3-8F8F-DC47723AAF9C}|clinic_api\\clinic_api.csproj|solutionrelative:clinic_api\\controllers\\pedidoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{860C73C7-0906-46D3-8F8F-DC47723AAF9C}|clinic_api\\clinic_api.csproj|c:\\users\\erick\\downloads\\campuscare_api_repository\\campuscareapi\\clinic_api\\controllers\\especialidadescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{860C73C7-0906-46D3-8F8F-DC47723AAF9C}|clinic_api\\clinic_api.csproj|solutionrelative:clinic_api\\controllers\\especialidadescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{860C73C7-0906-46D3-8F8F-DC47723AAF9C}|clinic_api\\clinic_api.csproj|c:\\users\\erick\\downloads\\campuscare_api_repository\\campuscareapi\\clinic_api\\controllers\\recetascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{860C73C7-0906-46D3-8F8F-DC47723AAF9C}|clinic_api\\clinic_api.csproj|solutionrelative:clinic_api\\controllers\\recetascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{860C73C7-0906-46D3-8F8F-DC47723AAF9C}|clinic_api\\clinic_api.csproj|c:\\users\\erick\\downloads\\campuscare_api_repository\\campuscareapi\\clinic_api\\dto\u0027s\\pedidosdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{860C73C7-0906-46D3-8F8F-DC47723AAF9C}|clinic_api\\clinic_api.csproj|solutionrelative:clinic_api\\dto\u0027s\\pedidosdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{860C73C7-0906-46D3-8F8F-DC47723AAF9C}|clinic_api\\clinic_api.csproj|c:\\users\\erick\\downloads\\campuscare_api_repository\\campuscareapi\\clinic_api\\dto\u0027s\\recetasdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{860C73C7-0906-46D3-8F8F-DC47723AAF9C}|clinic_api\\clinic_api.csproj|solutionrelative:clinic_api\\dto\u0027s\\recetasdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{860C73C7-0906-46D3-8F8F-DC47723AAF9C}|clinic_api\\clinic_api.csproj|c:\\users\\erick\\downloads\\campuscare_api_repository\\campuscareapi\\clinic_api\\controllers\\citasmedicascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{860C73C7-0906-46D3-8F8F-DC47723AAF9C}|clinic_api\\clinic_api.csproj|solutionrelative:clinic_api\\controllers\\citasmedicascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{860C73C7-0906-46D3-8F8F-DC47723AAF9C}|clinic_api\\clinic_api.csproj|c:\\users\\erick\\downloads\\campuscare_api_repository\\campuscareapi\\clinic_api\\controllers\\doctorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{860C73C7-0906-46D3-8F8F-DC47723AAF9C}|clinic_api\\clinic_api.csproj|solutionrelative:clinic_api\\controllers\\doctorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{860C73C7-0906-46D3-8F8F-DC47723AAF9C}|clinic_api\\clinic_api.csproj|c:\\users\\erick\\downloads\\campuscare_api_repository\\campuscareapi\\clinic_api\\controllers\\pacientescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{860C73C7-0906-46D3-8F8F-DC47723AAF9C}|clinic_api\\clinic_api.csproj|solutionrelative:clinic_api\\controllers\\pacientescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{860C73C7-0906-46D3-8F8F-DC47723AAF9C}|clinic_api\\clinic_api.csproj|c:\\users\\erick\\downloads\\campuscare_api_repository\\campuscareapi\\clinic_api\\controllers\\medicamentoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{860C73C7-0906-46D3-8F8F-DC47723AAF9C}|clinic_api\\clinic_api.csproj|solutionrelative:clinic_api\\controllers\\medicamentoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{860C73C7-0906-46D3-8F8F-DC47723AAF9C}|clinic_api\\clinic_api.csproj|c:\\users\\erick\\downloads\\campuscare_api_repository\\campuscareapi\\clinic_api\\dto\u0027s\\createreceta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{860C73C7-0906-46D3-8F8F-DC47723AAF9C}|clinic_api\\clinic_api.csproj|solutionrelative:clinic_api\\dto\u0027s\\createreceta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{860C73C7-0906-46D3-8F8F-DC47723AAF9C}|clinic_api\\clinic_api.csproj|c:\\users\\erick\\downloads\\campuscare_api_repository\\campuscareapi\\clinic_api\\dto\u0027s\\medicamentosdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{860C73C7-0906-46D3-8F8F-DC47723AAF9C}|clinic_api\\clinic_api.csproj|solutionrelative:clinic_api\\dto\u0027s\\medicamentosdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{860C73C7-0906-46D3-8F8F-DC47723AAF9C}|clinic_api\\clinic_api.csproj|c:\\users\\erick\\downloads\\campuscare_api_repository\\campuscareapi\\clinic_api\\dto\u0027s\\createcitasmedicasdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{860C73C7-0906-46D3-8F8F-DC47723AAF9C}|clinic_api\\clinic_api.csproj|solutionrelative:clinic_api\\dto\u0027s\\createcitasmedicasdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{860C73C7-0906-46D3-8F8F-DC47723AAF9C}|clinic_api\\clinic_api.csproj|c:\\users\\erick\\downloads\\campuscare_api_repository\\campuscareapi\\clinic_api\\models\\medicamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{860C73C7-0906-46D3-8F8F-DC47723AAF9C}|clinic_api\\clinic_api.csproj|solutionrelative:clinic_api\\models\\medicamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -45,120 +37,93 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 190,
-          "SelectedChildIndex": 2,
+          "DockedWidth": 194,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "RecetasController.cs",
-              "DocumentMoniker": "C:\\Users\\erick\\Downloads\\campusCare_api_Repository\\CampusCareAPI\\clinic_api\\Controllers\\RecetasController.cs",
-              "RelativeDocumentMoniker": "clinic_api\\Controllers\\RecetasController.cs",
-              "ToolTip": "C:\\Users\\erick\\Downloads\\campusCare_api_Repository\\CampusCareAPI\\clinic_api\\Controllers\\RecetasController.cs",
-              "RelativeToolTip": "clinic_api\\Controllers\\RecetasController.cs",
-              "ViewState": "AQIAAKQAAAAAAAAAAAAcwLYAAABUAAAA",
+              "DocumentIndex": 0,
+              "Title": "CategoriasController.cs",
+              "DocumentMoniker": "C:\\Users\\erick\\Downloads\\campusCare_api_Repository\\CampusCareAPI\\clinic_api\\Controllers\\CategoriasController.cs",
+              "RelativeDocumentMoniker": "clinic_api\\Controllers\\CategoriasController.cs",
+              "ToolTip": "C:\\Users\\erick\\Downloads\\campusCare_api_Repository\\CampusCareAPI\\clinic_api\\Controllers\\CategoriasController.cs",
+              "RelativeToolTip": "clinic_api\\Controllers\\CategoriasController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T22:24:48.802Z",
+              "WhenOpened": "2024-11-13T04:41:16.916Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "PedidosController.cs",
-              "DocumentMoniker": "C:\\Users\\erick\\Downloads\\campusCare_api_Repository\\CampusCareAPI\\clinic_api\\Controllers\\PedidosController.cs",
-              "RelativeDocumentMoniker": "clinic_api\\Controllers\\PedidosController.cs",
-              "ToolTip": "C:\\Users\\erick\\Downloads\\campusCare_api_Repository\\CampusCareAPI\\clinic_api\\Controllers\\PedidosController.cs",
-              "RelativeToolTip": "clinic_api\\Controllers\\PedidosController.cs",
-              "ViewState": "AQIAAIwAAAAAAAAAAAAcwJQAAAByAAAA",
+              "Title": "EspecialidadesController.cs",
+              "DocumentMoniker": "C:\\Users\\erick\\Downloads\\campusCare_api_Repository\\CampusCareAPI\\clinic_api\\Controllers\\EspecialidadesController.cs",
+              "RelativeDocumentMoniker": "clinic_api\\Controllers\\EspecialidadesController.cs",
+              "ToolTip": "C:\\Users\\erick\\Downloads\\campusCare_api_Repository\\CampusCareAPI\\clinic_api\\Controllers\\EspecialidadesController.cs",
+              "RelativeToolTip": "clinic_api\\Controllers\\EspecialidadesController.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAgwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T06:42:57.239Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CampusCareContext.cs",
-              "DocumentMoniker": "C:\\Users\\erick\\Downloads\\campusCare_api_Repository\\CampusCareAPI\\clinic_api\\Models\\CampusCareContext.cs",
-              "RelativeDocumentMoniker": "clinic_api\\Models\\CampusCareContext.cs",
-              "ToolTip": "C:\\Users\\erick\\Downloads\\campusCare_api_Repository\\CampusCareAPI\\clinic_api\\Models\\CampusCareContext.cs",
-              "RelativeToolTip": "clinic_api\\Models\\CampusCareContext.cs",
-              "ViewState": "AQIAAE4BAAAAAAAAAAAIwGABAABFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T06:33:50.936Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-13T04:40:02.256Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "PedidosDTO.cs",
-              "DocumentMoniker": "C:\\Users\\erick\\Downloads\\campusCare_api_Repository\\CampusCareAPI\\clinic_api\\DTO\u0027s\\PedidosDTO.cs",
-              "RelativeDocumentMoniker": "clinic_api\\DTO\u0027s\\PedidosDTO.cs",
-              "ToolTip": "C:\\Users\\erick\\Downloads\\campusCare_api_Repository\\CampusCareAPI\\clinic_api\\DTO\u0027s\\PedidosDTO.cs",
-              "RelativeToolTip": "clinic_api\\DTO\u0027s\\PedidosDTO.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAA1wA0AAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T05:38:35.744Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "RecetasDTO.cs",
-              "DocumentMoniker": "C:\\Users\\erick\\Downloads\\campusCare_api_Repository\\CampusCareAPI\\clinic_api\\DTO\u0027s\\RecetasDTO.cs",
-              "RelativeDocumentMoniker": "clinic_api\\DTO\u0027s\\RecetasDTO.cs",
-              "ToolTip": "C:\\Users\\erick\\Downloads\\campusCare_api_Repository\\CampusCareAPI\\clinic_api\\DTO\u0027s\\RecetasDTO.cs",
-              "RelativeToolTip": "clinic_api\\DTO\u0027s\\RecetasDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAA0AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T03:38:27.419Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CreateReceta.cs",
-              "DocumentMoniker": "C:\\Users\\erick\\Downloads\\campusCare_api_Repository\\CampusCareAPI\\clinic_api\\DTO\u0027s\\CreateReceta.cs",
-              "RelativeDocumentMoniker": "clinic_api\\DTO\u0027s\\CreateReceta.cs",
-              "ToolTip": "C:\\Users\\erick\\Downloads\\campusCare_api_Repository\\CampusCareAPI\\clinic_api\\DTO\u0027s\\CreateReceta.cs",
-              "RelativeToolTip": "clinic_api\\DTO\u0027s\\CreateReceta.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T03:38:00.39Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "CreateCitasMedicasDTO.cs",
-              "DocumentMoniker": "C:\\Users\\erick\\Downloads\\campusCare_api_Repository\\CampusCareAPI\\clinic_api\\DTO\u0027s\\CreateCitasMedicasDTO.cs",
-              "RelativeDocumentMoniker": "clinic_api\\DTO\u0027s\\CreateCitasMedicasDTO.cs",
-              "ToolTip": "C:\\Users\\erick\\Downloads\\campusCare_api_Repository\\CampusCareAPI\\clinic_api\\DTO\u0027s\\CreateCitasMedicasDTO.cs",
-              "RelativeToolTip": "clinic_api\\DTO\u0027s\\CreateCitasMedicasDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T03:37:35.712Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "DoctoresController.cs",
               "DocumentMoniker": "C:\\Users\\erick\\Downloads\\campusCare_api_Repository\\CampusCareAPI\\clinic_api\\Controllers\\DoctoresController.cs",
               "RelativeDocumentMoniker": "clinic_api\\Controllers\\DoctoresController.cs",
               "ToolTip": "C:\\Users\\erick\\Downloads\\campusCare_api_Repository\\CampusCareAPI\\clinic_api\\Controllers\\DoctoresController.cs",
               "RelativeToolTip": "clinic_api\\Controllers\\DoctoresController.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAA1wAAAAAAAAAAA",
+              "ViewState": "AQIAADAAAAAAAAAAAAAowDgAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T02:23:59.071Z"
+              "WhenOpened": "2024-11-13T03:27:10.125Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CitasMedicasController.cs",
+              "DocumentMoniker": "C:\\Users\\erick\\Downloads\\campusCare_api_Repository\\CampusCareAPI\\clinic_api\\Controllers\\CitasMedicasController.cs",
+              "RelativeDocumentMoniker": "clinic_api\\Controllers\\CitasMedicasController.cs",
+              "ToolTip": "C:\\Users\\erick\\Downloads\\campusCare_api_Repository\\CampusCareAPI\\clinic_api\\Controllers\\CitasMedicasController.cs",
+              "RelativeToolTip": "clinic_api\\Controllers\\CitasMedicasController.cs",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAowFEAAABGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-13T02:36:14.793Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "PacientesController.cs",
-              "DocumentMoniker": "C:\\Users\\erick\\Downloads\\campusCare_api_Repository\\CampusCareAPI\\clinic_api\\Controllers\\PacientesController.cs",
-              "RelativeDocumentMoniker": "clinic_api\\Controllers\\PacientesController.cs",
-              "ToolTip": "C:\\Users\\erick\\Downloads\\campusCare_api_Repository\\CampusCareAPI\\clinic_api\\Controllers\\PacientesController.cs",
-              "RelativeToolTip": "clinic_api\\Controllers\\PacientesController.cs",
-              "ViewState": "AQIAAMEAAAAAAAAAAAA4wCQAAAANAAAA",
+              "Title": "Medicamento.cs",
+              "DocumentMoniker": "C:\\Users\\erick\\Downloads\\campusCare_api_Repository\\CampusCareAPI\\clinic_api\\Models\\Medicamento.cs",
+              "RelativeDocumentMoniker": "clinic_api\\Models\\Medicamento.cs",
+              "ToolTip": "C:\\Users\\erick\\Downloads\\campusCare_api_Repository\\CampusCareAPI\\clinic_api\\Models\\Medicamento.cs",
+              "RelativeToolTip": "clinic_api\\Models\\Medicamento.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T02:22:17.65Z"
+              "WhenOpened": "2024-11-13T01:42:36.819Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MedicamentosDTO.cs",
+              "DocumentMoniker": "C:\\Users\\erick\\Downloads\\campusCare_api_Repository\\CampusCareAPI\\clinic_api\\DTO\u0027s\\MedicamentosDTO.cs",
+              "RelativeDocumentMoniker": "clinic_api\\DTO\u0027s\\MedicamentosDTO.cs",
+              "ToolTip": "C:\\Users\\erick\\Downloads\\campusCare_api_Repository\\CampusCareAPI\\clinic_api\\DTO\u0027s\\MedicamentosDTO.cs",
+              "RelativeToolTip": "clinic_api\\DTO\u0027s\\MedicamentosDTO.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAA1wAgAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-13T01:42:09.884Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MedicamentosController.cs",
+              "DocumentMoniker": "C:\\Users\\erick\\Downloads\\campusCare_api_Repository\\CampusCareAPI\\clinic_api\\Controllers\\MedicamentosController.cs",
+              "RelativeDocumentMoniker": "clinic_api\\Controllers\\MedicamentosController.cs",
+              "ToolTip": "C:\\Users\\erick\\Downloads\\campusCare_api_Repository\\CampusCareAPI\\clinic_api\\Controllers\\MedicamentosController.cs",
+              "RelativeToolTip": "clinic_api\\Controllers\\MedicamentosController.cs",
+              "ViewState": "AQIAADEAAAAAAAAAAAAYwDkAAABRAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-13T01:40:14.699Z"
             }
           ]
         }

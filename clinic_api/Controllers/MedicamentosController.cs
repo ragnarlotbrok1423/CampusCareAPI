@@ -42,6 +42,41 @@ namespace clinic_api.Controllers
             return Ok(medicamentos);
         }
 
+        [HttpGet("categoria/{id}")]
+        public async Task<ActionResult<IEnumerable<MedicamentosDTO>>> GetMedicamentoByCategoria(int id)
+        {
+            var medicamentos = await _context.Medicamentos
+                .Include(m => m.CategoriaFkNavigation)
+                .Where(m => m.CategoriaFk == id)
+                .Select(e => new MedicamentosDTO
+                {
+
+                    Idmedicamento = e.Idmedicamento,
+                    Nombre = e.Nombre,
+                    Categoria = new CategoriaDTO
+                    {
+                        NombreCategoria = e.CategoriaFkNavigation.NombreCategoria
+                    }
+
+                })
+                .ToListAsync();
+            if (medicamentos == null || !medicamentos.Any())
+            {
+                return NotFound(new { message = "No hay Medicamentos para esta categoria" });
+            }
+            return Ok(medicamentos);
+
+
+
+
+
+
+
+        }
+
+
+
+
         // GET: api/Medicamentos/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Medicamento>> GetMedicamento(int id)

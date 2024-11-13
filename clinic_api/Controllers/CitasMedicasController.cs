@@ -62,6 +62,46 @@ namespace campusCareAPI.Controllers
                 .ToListAsync();
             return Ok(citasMedicas);
         }
+        // controlador para obtener pacientes por doctor asignado
+        [HttpGet("doctor/{id}")]
+        public async Task<ActionResult<IEnumerable<CitasMedicasDTO>>> GetCitasMedicasByDoctor(int id)
+        {
+            var citasMedicas = await _context.CitasMedicas
+                .Include(c => c.PacienteNavigation)
+                .Include(c => c.DoctorNavigation)
+                .Where(c => c.Doctor == id)
+                .Select(s => new CitasMedicasDTO
+                {
+                    IdcitasMedicas = s.IdcitasMedicas,
+                    TipoConsulta = new TipoConsultaDTO
+                    {
+                        TipoConsulta = s.TipoConsultaNavigation.TipoConsulta
+                    },
+                    Usuarios = new PacientesDTO
+                    {
+                        IdUsuarios = s.PacienteNavigation.IdPacientes,
+                        Nombre = s.PacienteNavigation.Nombre,
+                        Apellido = s.PacienteNavigation.Apellido,
+                        Cedula = s.PacienteNavigation.Cedula
+
+                    },
+
+                })
+
+
+                .ToListAsync();
+
+            if (citasMedicas == null || !citasMedicas.Any())
+            {
+                return NotFound("No hay citas médicas registradas para este doctor.");
+            }
+
+            return Ok(citasMedicas);
+        }
+
+
+
+
 
         // GET: api/CitasMedicas/5
         [HttpGet("{id}")]
