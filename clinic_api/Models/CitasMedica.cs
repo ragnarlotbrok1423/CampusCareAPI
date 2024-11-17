@@ -19,6 +19,8 @@ public partial class CitasMedica
 
     public int Estado { get; set; }
 
+    public string? Descripcion { get; set; }
+
     public virtual Doctore DoctorNavigation { get; set; } = null!;
 
     public virtual Estado EstadoNavigation { get; set; } = null!;

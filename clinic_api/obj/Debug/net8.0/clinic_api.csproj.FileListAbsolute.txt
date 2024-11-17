@@ -477,4 +477,6 @@ C:\Users\erick\Downloads\campusCare_api_Repository\CampusCareAPI\clinic_api\obj\
 C:\Users\erick\Downloads\campusCare_api_Repository\CampusCareAPI\clinic_api\obj\Debug\net8.0\clinic_api.pdb
 C:\Users\erick\Downloads\campusCare_api_Repository\CampusCareAPI\clinic_api\obj\Debug\net8.0\clinic_api.genruntimeconfig.cache
 C:\Users\erick\Downloads\campusCare_api_Repository\CampusCareAPI\clinic_api\obj\Debug\net8.0\ref\clinic_api.dll
-C:\Users\erick\Downloads\campusCare_api_Repository\CampusCareAPI\clinic_api\bin\Debug\net8.0\System.Formats.Asn1.dll
+C:\Users\erick\Downloads\campusCare_api_Repository\CampusCareAPI\clinic_api\bin\Debug\net8.0\clinic_api.staticwebassets.endpoints.json
+C:\Users\erick\Downloads\campusCare_api_Repository\CampusCareAPI\clinic_api\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\erick\Downloads\campusCare_api_Repository\CampusCareAPI\clinic_api\obj\Debug\net8.0\staticwebassets\msbuild.clinic_api.Microsoft.AspNetCore.StaticWebAssetEndpoints.props

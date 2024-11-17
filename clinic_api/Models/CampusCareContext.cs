@@ -119,6 +119,7 @@ public partial class CampusCareContext : DbContext
             entity.HasIndex(e => e.Paciente, "usuarios_fk_idx");
 
             entity.Property(e => e.IdcitasMedicas).HasColumnName("idcitas_medicas");
+            entity.Property(e => e.Descripcion).HasColumnName("descripcion");
             entity.Property(e => e.Doctor).HasColumnName("doctor");
             entity.Property(e => e.Estado).HasColumnName("estado");
             entity.Property(e => e.Fecha)

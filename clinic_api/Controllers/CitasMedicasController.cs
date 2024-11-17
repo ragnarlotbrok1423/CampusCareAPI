@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using campusCareAPI.Models;
 using Microsoft.AspNetCore.Mvc.Routing;
 using System.Linq.Expressions;
+using campusCareAPI.DTO_s;
+using clinic_api.DTO_s;
 using clinic_api.Models;
 
 namespace campusCareAPI.Controllers
@@ -30,12 +32,18 @@ namespace campusCareAPI.Controllers
             var citasMedicas = await _context.CitasMedicas
 
                 .Include(c => c.TipoConsultaNavigation)
+                .Include(c => c.EstadoNavigation)
                 .Include(c => c.PacienteNavigation)
                 .Include(c => c.DoctorNavigation)
                 .Select(C => new CitasMedicasDTO
                 {
                     IdcitasMedicas = C.IdcitasMedicas,
                     Fecha = C.Fecha,
+                    
+                    Estado = new EstadoDTO
+                    {
+                      NombreEstado  = C.EstadoNavigation.NombreEstado
+                    },
 
                     TipoConsulta = new TipoConsultaDTO
                     {
@@ -85,6 +93,12 @@ namespace campusCareAPI.Controllers
                         Cedula = s.PacienteNavigation.Cedula
 
                     },
+                    Doctores = new DoctoresDTO
+                    {
+                        IdDoctores = s.DoctorNavigation.IdDoctores,
+                        NombreCompleto = s.DoctorNavigation.NombreCompleto
+                        
+                    }
 
                 })
 
@@ -99,6 +113,42 @@ namespace campusCareAPI.Controllers
             return Ok(citasMedicas);
         }
 
+        [HttpGet("tipoCita/{id}")]
+        public async Task<ActionResult<IEnumerable<CitasMedicasDTO>>> GetCitasMedicasByTipoCita(int id)
+        {
+            var citaMedica = await _context.CitasMedicas
+                .Include(T => T.TipoConsultaNavigation)
+                .Where(T => T.TipoConsulta == id)
+                .Select(e => new CitasMedicasDTO
+                    {
+                        IdcitasMedicas = e.IdcitasMedicas,
+                        Fecha = e.Fecha,
+                        Descripcion = e.Descripcion,
+                        TipoConsulta = new TipoConsultaDTO
+                        {
+                            TipoConsulta = e.TipoConsultaNavigation.TipoConsulta
+                        },
+                        Usuarios = new PacientesDTO
+                        {
+                            Nombre = e.PacienteNavigation.Nombre,
+                            Apellido = e.PacienteNavigation.Apellido,
+                            Cedula = e.PacienteNavigation.Cedula,
+                        },
+                        Doctores = new DoctoresDTO
+                        {
+                            NombreCompleto = e.DoctorNavigation.NombreCompleto,
+                            Cedula = e.DoctorNavigation.Cedula,
+                        }
+                        
+
+                    }
+                ).ToListAsync();
+            if (citaMedica == null || !citaMedica.Any())
+            {
+                return NotFound(new { message = "No hay registros para este tipo de citas" });
+            }
+            return Ok(citaMedica);
+        }
 
 
 
@@ -208,39 +258,42 @@ namespace campusCareAPI.Controllers
 
         // POST: api/CitasMedicas
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<CitasMedica>> PostCitasMedica(CreateCitasMedicasDTO citasMedicasDTO)
-        {
-            var usuario = await _context.Pacientes.FirstOrDefaultAsync(c => c.IdPacientes == citasMedicasDTO.IdUsuario);
-            if (usuario == null)
-            {
-                return BadRequest("El usuario no existe");
-            }
-            var doctor = await _context.Doctores.FirstOrDefaultAsync(c => c.IdDoctores == citasMedicasDTO.IdDoctor);
-            if (doctor == null)
-            {
-                return BadRequest("El doctor no existe");
-            }
+[HttpPost]
+public async Task<ActionResult<CitasMedica>> PostCitasMedica(CreateCitasMedicasDTO citasMedicasDTO)
+{
+    var usuario = await _context.Pacientes.FirstOrDefaultAsync(c => c.IdPacientes == citasMedicasDTO.IdUsuario);
+    if (usuario == null)
+    {
+        return BadRequest("El usuario no existe");
+    }
+    var doctor = await _context.Doctores.FirstOrDefaultAsync(c => c.IdDoctores == citasMedicasDTO.IdDoctor);
+    if (doctor == null)
+    {
+        return BadRequest("El doctor no existe");
+    }
+    var tipoConsulta = await _context.TiposConsultas.FirstOrDefaultAsync(c => c.IdtiposConsultas == citasMedicasDTO.IdTipoConsulta);
+    if (tipoConsulta == null)
+    {
+        return BadRequest("El tipo de consulta no existe");
+    }
 
-            var tipoConsulta = await _context.TiposConsultas.FirstOrDefaultAsync(c => c.IdtiposConsultas == citasMedicasDTO.IdTipoConsulta);
+    // Asignar IdEstado con el valor predeterminado 1
+    var citasMedica = new CitasMedica
+    {
+        Fecha = citasMedicasDTO.Fecha,
+        TipoConsulta = tipoConsulta.IdtiposConsultas,
+        Estado = 1, // Valor predeterminado
+        Descripcion = citasMedicasDTO.Observaciones,
+        Paciente = usuario.IdPacientes,
+        Doctor = doctor.IdDoctores
+    };
+
+    _context.CitasMedicas.Add(citasMedica);
+    await _context.SaveChangesAsync();
+    return Ok(citasMedica);
 
 
-            await _context.SaveChangesAsync();
-
-            var citasMedica = new CitasMedica
-            {
-                Fecha = citasMedicasDTO.Fecha,
-                TipoConsulta = tipoConsulta.IdtiposConsultas,
-                Paciente = usuario.IdPacientes,
-                Doctor = doctor.IdDoctores
-            };
-
-            _context.CitasMedicas.Add(citasMedica);
-            await _context.SaveChangesAsync();
-            return Ok(citasMedica);
-
-
-        }
+}
 
         // DELETE: api/CitasMedicas/5
         [HttpDelete("{id}")]

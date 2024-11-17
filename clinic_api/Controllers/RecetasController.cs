@@ -128,7 +128,7 @@ namespace clinic_api.Controllers
 
         // Cada vez que se agregue una cantidad de medicamento a la receta, se debe restar de la cantidad en stock
         [HttpPost]
-        public async Task<IActionResult> CrearReceta([FromBody] CreateReceta recetasDTO)
+        public async Task<IActionResult> CrearReceta ([FromBody] CreateReceta recetasDTO)
         {
             if (recetasDTO == null || recetasDTO.CantidadDeEntrega <= 0)
             {
